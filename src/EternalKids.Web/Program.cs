@@ -16,6 +16,7 @@ builder.Services.AddDbContext<EternalKidsContext>(options =>
 builder.Services.AddScoped<IPricingService, PricingService>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
 builder.Services.AddScoped<IAiConversationService, AiConversationService>();
+builder.Services.AddScoped<IAiModelClient, AiModelClientMock>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IPaymentService, PaymentServiceMock>();
 
