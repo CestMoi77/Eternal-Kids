@@ -1,0 +1,79 @@
+:root {
+    --ek-bg: #F9F7F2;
+    --ek-gold: #C5A367;
+    --ek-dark: #1A1A1A;
+}
+
+body.ek-body {
+    background: var(--ek-bg);
+    color: var(--ek-dark);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.ek-serif { font-family: 'Cormorant Garamond', serif; }
+
+h1, h2, h3, h4, h5, .display-5, .display-6 { font-family: 'Cormorant Garamond', serif; letter-spacing: .02em; }
+
+.ek-promo-bar {
+    background: linear-gradient(90deg, #2a1c12, #1A1A1A);
+    color: #f4e7d1;
+    font-size: .85rem;
+    text-align: center;
+    padding: .4rem .5rem;
+}
+
+.ek-brand { font-size: 2rem; font-family: 'Cormorant Garamond', serif; color: var(--ek-dark) !important; }
+.ek-brand span { color: var(--ek-gold); font-style: italic; }
+
+.nav-link { color: #4b4b4b; font-weight: 500; }
+.nav-link:hover, .nav-link.active { color: var(--ek-dark); }
+
+.ek-btn-book {
+    background: var(--ek-dark);
+    color: #fff;
+    border-radius: .6rem;
+    padding: .65rem 1.3rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.ek-btn-book:hover { background: #000; color: #fff; }
+
+.ek-hero { padding: 5rem 0; }
+.ek-hero-card {
+    border: 1px solid rgba(197,163,103,.25);
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(26,26,26,.08);
+    background: #fff;
+}
+
+.ek-chip {
+    background: #efe4d5;
+    border-radius: .5rem;
+    padding: .3rem .75rem;
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .08em;
+}
+
+.ek-card { border: 1px solid rgba(197,163,103,.35); border-radius: 1rem; box-shadow: 0 16px 35px rgba(26,26,26,.07); }
+
+.ek-footer {
+    background: #1b1b1b;
+    color: #f8f4ee;
+}
+
+.ek-footer a { color: #e8d8bf; text-decoration: none; }
+.ek-footer a:hover { color: #fff; }
+
+.ek-admin-link.active { background: var(--ek-gold); color: #111; }
+
+.ek-step { display:none; }
+.ek-step.active { display:block; }
+
+.ek-table thead th { background: #121212; color:#fff; }
+.ek-table thead th:last-child { background: var(--ek-gold); color:#111; }
+
+.ek-chat-shell { border: 1px solid rgba(197,163,103,.45); border-radius: 1rem; background: #fff; box-shadow: 0 18px 45px rgba(26,26,26,.08); }
+
+pre { white-space: pre-wrap; word-break: break-word; }

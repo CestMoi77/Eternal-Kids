@@ -15,6 +15,8 @@ public class EternalKidsContext(DbContextOptions<EternalKidsContext> options) : 
     public DbSet<ChatMessage> ChatMessages => Set<ChatMessage>();
     public DbSet<AiRequestLog> AiRequestLogs => Set<AiRequestLog>();
     public DbSet<PriceRule> PriceRules => Set<PriceRule>();
+    public DbSet<PackageDefinition> PackageDefinitions => Set<PackageDefinition>();
+    public DbSet<SiteContentBlock> SiteContentBlocks => Set<SiteContentBlock>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -128,6 +130,28 @@ public class EternalKidsContext(DbContextOptions<EternalKidsContext> options) : 
             entity.Property(x => x.PackageType).HasMaxLength(50).IsRequired();
             entity.Property(x => x.Price).HasPrecision(18, 2);
             entity.HasIndex(x => new { x.EventType, x.PackageType, x.MinGuests, x.MaxGuests });
+        });
+
+        modelBuilder.Entity<PackageDefinition>(entity =>
+        {
+            entity.ToTable("EternalKids_PackageDefinition");
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.PackageType).HasMaxLength(50).IsRequired();
+            entity.Property(x => x.Title).HasMaxLength(120).IsRequired();
+            entity.Property(x => x.Description).HasMaxLength(500).IsRequired();
+            entity.Property(x => x.FeaturesJson).HasColumnType("nvarchar(max)").IsRequired();
+            entity.HasIndex(x => x.PackageType).IsUnique();
+        });
+
+        modelBuilder.Entity<SiteContentBlock>(entity =>
+        {
+            entity.ToTable("EternalKids_SiteContentBlock");
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.PageKey).HasMaxLength(50).IsRequired();
+            entity.Property(x => x.SectionKey).HasMaxLength(50).IsRequired();
+            entity.Property(x => x.Title).HasMaxLength(200).IsRequired();
+            entity.Property(x => x.Body).HasColumnType("nvarchar(max)").IsRequired();
+            entity.HasIndex(x => new { x.PageKey, x.SectionKey }).IsUnique();
         });
     }
 }

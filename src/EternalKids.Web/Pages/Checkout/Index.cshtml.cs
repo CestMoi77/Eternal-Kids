@@ -23,8 +23,18 @@ public class IndexModel(
     public decimal DepositAmount { get; private set; }
     public string? ResultMessage { get; private set; }
 
-    public async Task OnGetAsync(CancellationToken ct)
+    public async Task OnGetAsync(string? eventType, int? guestCount, string? packageType, CancellationToken ct)
     {
+        if (!string.IsNullOrWhiteSpace(eventType))
+        {
+            Input.EventType = eventType;
+        }
+
+        if (guestCount is > 0)
+        {
+            Input.GuestCount = guestCount.Value;
+        }
+
         await LoadCartSummaryAsync(ct);
     }
 

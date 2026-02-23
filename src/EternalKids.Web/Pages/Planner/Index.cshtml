@@ -1,146 +1,83 @@
 @page "/Planner"
 @model EternalKids.Web.Pages.Planner.IndexModel
-@{
-    ViewData["Title"] = "AI Planner";
-}
+@{ ViewData["Title"] = "AI Planner"; }
 
-<section class="ek-planner-shell card border-0 shadow-lg">
-    <div class="card-header ek-planner-header d-flex justify-content-between align-items-center">
-        <div>
-            <h1 class="h4 mb-1 text-white">Eternal Kids AI Planner</h1>
-            <p class="mb-0 text-white-50 small">Realtime advies, echte prijzen en directe vervolgstappen.</p>
-        </div>
-        <span class="badge rounded-pill text-bg-light">Online</span>
+<div class="text-center mb-4">
+    <span class="ek-chip">AI Party Planner</span>
+    <h1 class="display-5 mt-2">Plan Uw Perfecte Feest</h1>
+    <p class="text-secondary">Realtime suggesties op basis van actuele prijsstaffels en directe boeking naar checkout.</p>
+</div>
+
+<section class="ek-chat-shell p-0 overflow-hidden">
+    <div class="p-3" style="background:linear-gradient(90deg,#c5a367,#a18452); color:#fff;">
+        <strong>Eternal Kids AI Planner</strong>
+        <div class="small opacity-75">Online - klaar om te helpen</div>
     </div>
-
-    <div class="card-body ek-chat-body" id="chatMessages">
-        <div class="ek-bubble ek-bubble-assistant">
-            Welkom! Vertel me je eventtype, pakketwens en aantal gasten. Ik haal direct de actuele prijs op.
-        </div>
+    <div class="p-3" id="chatMessages" style="height:360px; overflow:auto; background:#fafafa;">
+        <div class="p-3 rounded bg-white border">Welkom! Vertel je eventtype, pakket en aantal gasten.</div>
     </div>
-
-    <div class="card-footer bg-white">
-        <form id="chatForm" class="row g-2">
-            <div class="col-md-3">
-                <select id="eventType" class="form-select">
-                    <option value="Kinderfeest">Kinderfeest</option>
-                    <option value="Verjaardag">Verjaardag</option>
-                    <option value="Babyshower">Babyshower</option>
-                    <option value="Bruiloft">Bruiloft</option>
-                    <option value="Bedrijfsevenement">Bedrijfsevenement</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select id="packageType" class="form-select">
-                    <option>Basic</option>
-                    <option>Elegant</option>
-                    <option>Prestige</option>
-                    <option>Deluxe</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <input id="guestCount" type="number" min="1" value="30" class="form-control" placeholder="Gasten" />
-            </div>
-            <div class="col-md-3">
-                <input id="chatInput" class="form-control" placeholder="Typ je bericht..." />
-            </div>
-            <div class="col-md-2 d-grid">
-                <button class="btn btn-dark" type="submit">Verstuur</button>
-            </div>
+    <div class="p-3 border-top">
+        <div class="row g-2 mb-2">
+            <div class="col-md-3"><select id="eventType" class="form-select"><option>Kinderfeest</option><option>Verjaardag</option><option>Babyshower</option><option>Bruiloft</option><option>Bedrijf</option></select></div>
+            <div class="col-md-3"><select id="packageType" class="form-select"><option>Basic</option><option>Elegant</option><option>Prestige</option><option>Deluxe</option></select></div>
+            <div class="col-md-2"><input id="guestCount" class="form-control" type="number" value="30" /></div>
+            <div class="col-md-4 d-grid"><button id="bookNowFromAi" class="btn ek-btn-book d-none" type="button">Direct Boeken</button></div>
+        </div>
+        <form id="chatForm" class="d-flex gap-2">
+            <input id="chatInput" class="form-control" placeholder="Typ uw bericht..." />
+            <button class="btn ek-btn-book" type="submit">Verstuur</button>
         </form>
     </div>
 </section>
 
 @section Scripts {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
-    <script>
-        const sessionId = "@Model.SessionId";
-        const chatMessages = document.getElementById("chatMessages");
-        const chatForm = document.getElementById("chatForm");
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+<script>
+const sessionId = "@Model.SessionId";
+const chatMessages = document.getElementById("chatMessages");
+const chatForm = document.getElementById("chatForm");
+const bookNowBtn = document.getElementById("bookNowFromAi");
+const connection = new signalR.HubConnectionBuilder().withUrl("/hubs/chat").withAutomaticReconnect().build();
 
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/hubs/chat")
-            .withAutomaticReconnect()
-            .build();
-
-        function addBubble(text, type) {
-            const bubble = document.createElement("div");
-            bubble.className = type === "user" ? "ek-bubble ek-bubble-user" : "ek-bubble ek-bubble-assistant";
-            bubble.textContent = text;
-            chatMessages.appendChild(bubble);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        connection.on("ReceiveAssistantMessage", payload => {
-            addBubble(payload.message, "assistant");
-        });
-
-        async function initializeChat() {
-            await connection.start();
-            await connection.invoke("JoinSession", sessionId);
-        }
-
-        chatForm.addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            const message = document.getElementById("chatInput").value;
-            if (!message || !message.trim()) return;
-
-            const request = {
-                sessionId,
-                message,
-                eventType: document.getElementById("eventType").value,
-                packageType: document.getElementById("packageType").value,
-                guestCount: parseInt(document.getElementById("guestCount").value || "0", 10),
-                quantity: 1
-            };
-
-            addBubble(message, "user");
-            document.getElementById("chatInput").value = "";
-
-            await connection.invoke("SendMessage", request);
-        });
-
-        initializeChat();
-    </script>
+function addBubble(text, isUser){
+    const el = document.createElement("div");
+    el.className = isUser ? "p-3 rounded mb-2 text-white" : "p-3 rounded mb-2 bg-white border";
+    if(isUser){ el.style.background = "#1A1A1A"; }
+    el.textContent = text;
+    chatMessages.appendChild(el);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-<style>
-    .ek-planner-shell {
-        overflow: hidden;
-        border-radius: 1rem;
-    }
+connection.on("ReceiveAssistantMessage", payload => {
+    addBubble(payload.message, false);
+    const actions = payload.uiActions || [];
+    const hasCheckout = actions.some(x => (x.type || '').toLowerCase() === 'checkout');
+    bookNowBtn.classList.toggle('d-none', !hasCheckout);
+});
 
-    .ek-planner-header {
-        background: linear-gradient(110deg, #4c1d95, #be185d 60%, #f59e0b);
-    }
+bookNowBtn.addEventListener('click', () => {
+    const eventType = document.getElementById("eventType").value;
+    const guestCount = document.getElementById("guestCount").value;
+    const packageType = document.getElementById("packageType").value;
+    window.location.href = `/Checkout?eventType=${encodeURIComponent(eventType)}&guestCount=${encodeURIComponent(guestCount)}&packageType=${encodeURIComponent(packageType)}`;
+});
 
-    .ek-chat-body {
-        min-height: 460px;
-        max-height: 520px;
-        overflow-y: auto;
-        background: linear-gradient(180deg, #faf5ff, #ffffff 35%);
-        display: flex;
-        flex-direction: column;
-        gap: .75rem;
-    }
+chatForm.addEventListener("submit", async e => {
+    e.preventDefault();
+    const message = document.getElementById("chatInput").value;
+    if(!message.trim()) return;
+    addBubble(message, true);
+    document.getElementById("chatInput").value = "";
+    await connection.invoke("SendMessage", {
+        sessionId,
+        message,
+        eventType: document.getElementById("eventType").value,
+        packageType: document.getElementById("packageType").value,
+        guestCount: parseInt(document.getElementById("guestCount").value || "0"),
+        quantity: 1
+    });
+});
 
-    .ek-bubble {
-        max-width: 75%;
-        border-radius: 1rem;
-        padding: .8rem 1rem;
-        line-height: 1.4;
-    }
-
-    .ek-bubble-assistant {
-        align-self: flex-start;
-        background-color: #f3e8ff;
-        color: #2e1065;
-    }
-
-    .ek-bubble-user {
-        align-self: flex-end;
-        background-color: #1f2937;
-        color: #fff;
-    }
-</style>
+(async function(){ await connection.start(); await connection.invoke("JoinSession", sessionId); })();
+</script>
+}
