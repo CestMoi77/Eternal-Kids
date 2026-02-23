@@ -1,0 +1,9 @@
+@model EternalKids.Web.Pages.Shared.CartSummaryViewModel
+
+<a class="ek-cart-summary nav-link ek-nav-link d-flex align-items-center gap-2" asp-page="/Winkelwagen/Index" aria-label="Ga naar winkelwagen">
+    <span class="ek-cart-icon">🛒</span>
+    <span class="small">
+        <strong>@Model.ItemCount</strong> items
+        <span class="opacity-75">• € @Model.Subtotal.ToString("N2")</span>
+    </span>
+</a>

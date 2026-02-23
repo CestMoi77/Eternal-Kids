@@ -1,0 +1,132 @@
+@using EternalKids.Web.Pages.Shared
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Eternal Kids</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        .ek-navbar {
+            background: linear-gradient(90deg, #6f42c1 0%, #d63384 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,.12);
+        }
+
+        .ek-brand {
+            font-weight: 700;
+            letter-spacing: .3px;
+            color: #fff !important;
+        }
+
+        .ek-nav-link {
+            color: rgba(255,255,255,.92) !important;
+            font-weight: 500;
+            margin-left: .35rem;
+            margin-right: .35rem;
+            border-radius: 999px;
+            padding: .45rem .9rem !important;
+            transition: background-color .2s ease, color .2s ease;
+        }
+
+        .ek-nav-link:hover,
+        .ek-nav-link:focus {
+            color: #fff !important;
+            background-color: rgba(255,255,255,.16);
+        }
+
+        .ek-main {
+            min-height: calc(100vh - 180px);
+        }
+
+        .ek-footer {
+            background-color: #1f1d2b;
+            color: #e5e7eb;
+        }
+
+        .ek-footer a {
+            color: #f9a8d4;
+            text-decoration: none;
+        }
+
+        .ek-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .ek-cart-icon {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ek-navbar">
+            <div class="container">
+                <a class="navbar-brand ek-brand" asp-area="" asp-page="/Index">Eternal Kids</a>
+
+                <button class="navbar-toggler border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#ekMainNav"
+                        aria-controls="ekMainNav" aria-expanded="false" aria-label="Navigatie tonen">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="ekMainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Diensten/Index">Diensten</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Prijzen/Index">Prijzen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Planner/Index">AI-Tool</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Checkout/Index">Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ek-nav-link" asp-area="" asp-page="/Admin/Orders/Index">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            @await Html.PartialAsync("_CartSummary", new CartSummaryViewModel
+                            {
+                                ItemCount = ViewData["CartItemCount"] as int? ?? 0,
+                                Subtotal = ViewData["CartSubtotal"] as decimal? ?? 0m
+                            })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="ek-main py-4">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="ek-footer py-4 mt-auto">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
+            <div>
+                <strong>Eternal Kids</strong><br />
+                Event Planning & Luxury Styling voor onvergetelijke kinder- en familie-events.
+            </div>
+            <div class="text-md-end">
+                <div>&copy; @DateTime.Now.Year Eternal Kids</div>
+                <div><a asp-area="" asp-page="/Privacy">Privacy</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,52 @@
+@page "/Admin/Pricing"
+@model EternalKids.Web.Pages.Admin.Pricing.IndexModel
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Prijzen Beheer";
+}
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h2 class="h6">Nieuwe prijsregel</h2>
+                <form method="post" asp-page-handler="Create" class="row g-2">
+                    <div class="col-12"><input asp-for="CreateInput.EventType" class="form-control" placeholder="EventType" /></div>
+                    <div class="col-12"><input asp-for="CreateInput.PackageType" class="form-control" placeholder="PackageType" /></div>
+                    <div class="col-6"><input asp-for="CreateInput.MinGuests" class="form-control" placeholder="Min" /></div>
+                    <div class="col-6"><input asp-for="CreateInput.MaxGuests" class="form-control" placeholder="Max" /></div>
+                    <div class="col-12"><input asp-for="CreateInput.Price" class="form-control" placeholder="Prijs" /></div>
+                    <div class="col-12 d-grid"><button class="btn btn-dark">Toevoegen</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle">
+                        <thead><tr><th>Event</th><th>Pakket</th><th>Range</th><th>Prijs</th><th></th></tr></thead>
+                        <tbody>
+                        @foreach (var rule in Model.Rules)
+                        {
+                            <tr>
+                                <td>@rule.EventType</td>
+                                <td>@rule.PackageType</td>
+                                <td>@rule.MinGuests - @rule.MaxGuests</td>
+                                <td>€ @rule.Price.ToString("N2")</td>
+                                <td>
+                                    <form method="post" asp-page-handler="Delete" class="d-inline">
+                                        <input type="hidden" name="id" value="@rule.Id" />
+                                        <button class="btn btn-sm btn-outline-danger">Verwijder</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
