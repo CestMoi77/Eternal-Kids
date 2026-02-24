@@ -3,32 +3,39 @@
 @{ ViewData["Title"] = "AI Planner"; }
 
 <div class="text-center mb-4">
-    <span class="ek-chip">AI Party Planner</span>
-    <h1 class="display-5 mt-2">Plan Uw Perfecte Feest</h1>
-    <p class="text-secondary">Realtime suggesties op basis van actuele prijsstaffels en directe boeking naar checkout.</p>
+    <span class="ek-chip">AI Planner</span>
+    <h1 class="display-5 mt-2">Plan uw feest in 3 slimme stappen</h1>
+    <p class="ek-muted">Conversational wizard met realtime prijsadvies en directe checkout.</p>
 </div>
 
-<section class="ek-chat-shell p-0 overflow-hidden">
-    <div class="p-3" style="background:linear-gradient(90deg,#c5a367,#a18452); color:#fff;">
-        <strong>Eternal Kids AI Planner</strong>
-        <div class="small opacity-75">Online - klaar om te helpen</div>
-    </div>
-    <div class="p-3" id="chatMessages" style="height:360px; overflow:auto; background:#fafafa;">
-        <div class="p-3 rounded bg-white border">Welkom! Vertel je eventtype, pakket en aantal gasten.</div>
-    </div>
-    <div class="p-3 border-top">
-        <div class="row g-2 mb-2">
-            <div class="col-md-3"><select id="eventType" class="form-select"><option>Kinderfeest</option><option>Verjaardag</option><option>Babyshower</option><option>Bruiloft</option><option>Bedrijf</option></select></div>
-            <div class="col-md-3"><select id="packageType" class="form-select"><option>Basic</option><option>Elegant</option><option>Prestige</option><option>Deluxe</option></select></div>
-            <div class="col-md-2"><input id="guestCount" class="form-control" type="number" value="30" /></div>
-            <div class="col-md-4 d-grid"><button id="bookNowFromAi" class="btn ek-btn-book d-none" type="button">Direct Boeken</button></div>
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="ek-card p-4 h-100">
+            <h2 class="h5 mb-3">Planner instellingen</h2>
+            <div class="mb-3"><label class="form-label">Eventtype</label><select id="eventType" class="form-select ek-field"><option>Kinderfeest</option><option>Verjaardag</option><option>Babyshower</option><option>Bruiloft</option><option>Bedrijf</option></select></div>
+            <div class="mb-3"><label class="form-label">Pakket</label><select id="packageType" class="form-select ek-field"><option>Basic</option><option>Elegant</option><option>Prestige</option><option>Deluxe</option></select></div>
+            <div class="mb-3"><label class="form-label">Aantal gasten</label><input id="guestCount" class="form-control ek-field" type="number" value="30" min="1" /></div>
+            <button id="bookNowFromAi" class="btn ek-btn-gold w-100 d-none" type="button">Direct boeken</button>
         </div>
-        <form id="chatForm" class="d-flex gap-2">
-            <input id="chatInput" class="form-control" placeholder="Typ uw bericht..." />
-            <button class="btn ek-btn-book" type="submit">Verstuur</button>
-        </form>
     </div>
-</section>
+    <div class="col-lg-8">
+        <section class="ek-chat-shell overflow-hidden">
+            <div class="p-3 text-white" style="background:linear-gradient(90deg,#1f2937,#374151)">
+                <strong>Eternal Kids AI Assistant</strong>
+                <div class="small opacity-75">Online • Realtime pricing gekoppeld</div>
+            </div>
+            <div class="p-3" id="chatMessages" style="height:380px; overflow:auto; background:#fbfcfe;">
+                <div class="ek-bubble-assistant">Welkom! Beschrijf uw event en ik stel direct een passend plan voor.</div>
+            </div>
+            <div class="p-3 border-top">
+                <form id="chatForm" class="d-flex gap-2">
+                    <input id="chatInput" class="form-control ek-field" placeholder="Typ je bericht..." />
+                    <button class="btn ek-btn-book" type="submit">Verstuur</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
 
 @section Scripts {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
@@ -39,10 +46,9 @@ const chatForm = document.getElementById("chatForm");
 const bookNowBtn = document.getElementById("bookNowFromAi");
 const connection = new signalR.HubConnectionBuilder().withUrl("/hubs/chat").withAutomaticReconnect().build();
 
-function addBubble(text, isUser){
+function addBubble(text, user){
     const el = document.createElement("div");
-    el.className = isUser ? "p-3 rounded mb-2 text-white" : "p-3 rounded mb-2 bg-white border";
-    if(isUser){ el.style.background = "#1A1A1A"; }
+    el.className = user ? "ek-bubble-user" : "ek-bubble-assistant";
     el.textContent = text;
     chatMessages.appendChild(el);
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -62,10 +68,10 @@ bookNowBtn.addEventListener('click', () => {
     window.location.href = `/Checkout?eventType=${encodeURIComponent(eventType)}&guestCount=${encodeURIComponent(guestCount)}&packageType=${encodeURIComponent(packageType)}`;
 });
 
-chatForm.addEventListener("submit", async e => {
+chatForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const message = document.getElementById("chatInput").value;
-    if(!message.trim()) return;
+    if (!message.trim()) return;
     addBubble(message, true);
     document.getElementById("chatInput").value = "";
     await connection.invoke("SendMessage", {
@@ -73,7 +79,7 @@ chatForm.addEventListener("submit", async e => {
         message,
         eventType: document.getElementById("eventType").value,
         packageType: document.getElementById("packageType").value,
-        guestCount: parseInt(document.getElementById("guestCount").value || "0"),
+        guestCount: parseInt(document.getElementById("guestCount").value || "0", 10),
         quantity: 1
     });
 });

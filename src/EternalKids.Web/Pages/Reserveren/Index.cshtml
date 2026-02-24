@@ -4,47 +4,52 @@
 
 <div class="text-center mb-4">
     <span class="ek-chip">Reserveren</span>
-    <h1 class="display-5 mt-2">Plan Uw Evenement</h1>
-    <p class="text-secondary">Multi-step offerteformulier met dynamische velden op basis van eventtype.</p>
+    <h1 class="display-5 mt-2">Offerte in 3 stappen</h1>
+    <p class="ek-muted">Een heldere flow met dynamische velden op basis van het gekozen eventtype.</p>
 </div>
 
-<form method="post" class="ek-card bg-white p-4">
+<form method="post" class="ek-card p-4 bg-white">
     <div id="step1" class="ek-step active">
-        <h2 class="h4">1. Eventdetails</h2>
+        <h2 class="h4 mb-3">Stap 1 • Eventdetails</h2>
         <div class="row g-3">
-            <div class="col-md-6"><label class="form-label">Eventtype</label><select asp-for="Input.EventType" class="form-select" id="eventType"><option>Kinderfeest</option><option>Babyshower</option><option>Bruiloft</option><option>Bedrijf</option></select></div>
-            <div class="col-md-6"><label class="form-label">Aantal gasten</label><input asp-for="Input.GuestCount" class="form-control" type="number" min="1" /></div>
-            <div class="col-md-6"><label class="form-label">Event datum</label><input asp-for="Input.EventDate" class="form-control" type="date" /></div>
-            <div class="col-md-6" id="childrenAgeWrap"><label class="form-label">Leeftijd kinderen</label><input asp-for="Input.ChildrenAge" class="form-control" /></div>
-            <div class="col-md-6 d-none" id="companyWrap"><label class="form-label">Bedrijfsnaam</label><input asp-for="Input.CompanyName" class="form-control" /></div>
+            <div class="col-md-6">
+                <label class="form-label">Eventtype</label>
+                <select asp-for="Input.EventType" class="form-select ek-field" id="eventType">
+                    <option>Kinderfeest</option><option>Babyshower</option><option>Bruiloft</option><option>Bedrijf</option>
+                </select>
+            </div>
+            <div class="col-md-6"><label class="form-label">Aantal gasten</label><input asp-for="Input.GuestCount" class="form-control ek-field" type="number" min="1" /></div>
+            <div class="col-md-6"><label class="form-label">Datum</label><input asp-for="Input.EventDate" class="form-control ek-field" type="date" /></div>
+            <div class="col-md-6" id="childrenAgeWrap"><label class="form-label">Leeftijd kinderen</label><input asp-for="Input.ChildrenAge" class="form-control ek-field" /></div>
+            <div class="col-md-6 d-none" id="companyWrap"><label class="form-label">Bedrijfsnaam</label><input asp-for="Input.CompanyName" class="form-control ek-field" /></div>
         </div>
-        <div class="mt-3 text-end"><button class="btn ek-btn-book" type="button" data-step-next="step2">Volgende</button></div>
+        <div class="text-end mt-3"><button type="button" class="btn ek-btn-book" data-step-next="step2">Volgende</button></div>
     </div>
 
     <div id="step2" class="ek-step">
-        <h2 class="h4">2. Diensten & voorkeuren</h2>
+        <h2 class="h4 mb-3">Stap 2 • Pakket en voorkeuren</h2>
         <div class="row g-3">
-            <div class="col-md-6"><label class="form-label">Gewenst pakket</label><select asp-for="Input.PackageType" class="form-select"><option>Basic</option><option>Elegant</option><option>Prestige</option><option>Deluxe</option></select></div>
-            <div class="col-md-6"><label class="form-label">Budget (€)</label><input asp-for="Input.Budget" class="form-control" type="number" min="0" /></div>
-            <div class="col-12"><label class="form-label">Opmerkingen</label><textarea asp-for="Input.Notes" class="form-control" rows="4"></textarea></div>
+            <div class="col-md-6"><label class="form-label">Pakket</label><select asp-for="Input.PackageType" class="form-select ek-field"><option>Basic</option><option>Elegant</option><option>Prestige</option><option>Deluxe</option></select></div>
+            <div class="col-md-6"><label class="form-label">Budget (€)</label><input asp-for="Input.Budget" type="number" min="0" class="form-control ek-field" /></div>
+            <div class="col-12"><label class="form-label">Opmerkingen</label><textarea asp-for="Input.Notes" rows="4" class="form-control ek-field"></textarea></div>
         </div>
-        <div class="mt-3 d-flex justify-content-between"><button class="btn btn-outline-dark" type="button" data-step-prev="step1">Terug</button><button class="btn ek-btn-book" type="button" data-step-next="step3">Volgende</button></div>
+        <div class="mt-3 d-flex justify-content-between"><button type="button" class="btn btn-light border" data-step-prev="step1">Terug</button><button type="button" class="btn ek-btn-book" data-step-next="step3">Volgende</button></div>
     </div>
 
     <div id="step3" class="ek-step">
-        <h2 class="h4">3. Contact</h2>
+        <h2 class="h4 mb-3">Stap 3 • Contact & betaling</h2>
         <div class="row g-3">
-            <div class="col-md-6"><input asp-for="Input.Name" class="form-control" placeholder="Naam" /></div>
-            <div class="col-md-6"><input asp-for="Input.Email" class="form-control" placeholder="E-mail" /></div>
-            <div class="col-md-6"><input asp-for="Input.Phone" class="form-control" placeholder="Telefoon" /></div>
-            <div class="col-md-6"><select asp-for="Input.PaymentMode" class="form-select"><option value="Deposit50">50% aanbetaling</option><option value="Full">100% volledig</option></select></div>
+            <div class="col-md-6"><input asp-for="Input.Name" class="form-control ek-field" placeholder="Naam" /></div>
+            <div class="col-md-6"><input asp-for="Input.Email" class="form-control ek-field" placeholder="E-mail" /></div>
+            <div class="col-md-6"><input asp-for="Input.Phone" class="form-control ek-field" placeholder="Telefoon" /></div>
+            <div class="col-md-6"><select asp-for="Input.PaymentMode" class="form-select ek-field"><option value="Deposit50">50% aanbetaling</option><option value="Full">100% betaling</option></select></div>
         </div>
-        <div class="mt-3 d-flex justify-content-between"><button class="btn btn-outline-dark" type="button" data-step-prev="step2">Terug</button><button class="btn ek-btn-book" type="submit">Offerte Aanvragen</button></div>
+        <div class="mt-3 d-flex justify-content-between"><button type="button" class="btn btn-light border" data-step-prev="step2">Terug</button><button type="submit" class="btn ek-btn-book">Offerte aanvragen</button></div>
     </div>
 
     @if (Model.Submitted)
     {
-        <div class="alert alert-success mt-3 mb-0">Uw aanvraag is ontvangen. Wij sturen binnen 24 uur een voorstel.</div>
+        <div class="alert alert-success mt-3 mb-0">Bedankt! Uw aanvraag is ontvangen. Wij reageren binnen 24 uur.</div>
     }
 </form>
 
@@ -55,14 +60,14 @@
     const childrenAgeWrap = document.getElementById('childrenAgeWrap');
     const companyWrap = document.getElementById('companyWrap');
 
-    function refreshDynamicFields(){
-        const value = (eventType.value || '').toLowerCase();
-        childrenAgeWrap.classList.toggle('d-none', !(value.includes('kinderfeest') || value.includes('babyshower')));
-        companyWrap.classList.toggle('d-none', !value.includes('bedrijf'));
+    function toggleDynamic(){
+        const v = (eventType.value || '').toLowerCase();
+        childrenAgeWrap.classList.toggle('d-none', !(v.includes('kinderfeest') || v.includes('babyshower')));
+        companyWrap.classList.toggle('d-none', !v.includes('bedrijf'));
     }
 
-    eventType.addEventListener('change', refreshDynamicFields);
-    refreshDynamicFields();
+    eventType.addEventListener('change', toggleDynamic);
+    toggleDynamic();
 })();
 </script>
 }
