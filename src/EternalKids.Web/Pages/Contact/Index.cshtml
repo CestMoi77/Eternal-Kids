@@ -2,26 +2,32 @@
 @model EternalKids.Web.Pages.Contact.IndexModel
 @{ ViewData["Title"] = "Contact"; }
 
-<div class="row g-4 align-items-start">
+<div class="row g-4">
     <div class="col-lg-5">
-        <h1 class="display-5">Neem Contact Op</h1>
-        <p class="text-secondary">Heb je vragen of wil je een event bespreken? We helpen je graag.</p>
-        <div class="ek-card bg-white p-4">
-            <p class="mb-2"><strong>E-mail:</strong> info@eternalkids.nl</p>
-            <p class="mb-2"><strong>Locatie:</strong> Nederland</p>
-            <p class="mb-0"><strong>Instagram:</strong> @eternalkids</p>
+        <span class="ek-chip">Contact</span>
+        <h1 class="display-5 mt-2">Laten we praten</h1>
+        <p class="ek-muted">Vragen over pakketten, maatwerk of planning? Ons team staat klaar.</p>
+
+        <div class="ek-card p-4 mt-3">
+            <p class="mb-2"><strong>E-mail</strong><br/>info@eternalkids.nl</p>
+            <p class="mb-2"><strong>Locatie</strong><br/>Nederland</p>
+            <p class="mb-0"><strong>Instagram</strong><br/>@@eternalkids</p>
         </div>
     </div>
+
     <div class="col-lg-7">
-        <div class="ek-card bg-white p-4">
+        <div class="ek-card p-4 bg-white">
             <form method="post" class="row g-3">
-                <div class="col-md-6"><input asp-for="Input.Name" class="form-control" placeholder="Uw naam" /></div>
-                <div class="col-md-6"><input asp-for="Input.Email" class="form-control" placeholder="E-mail" /></div>
-                <div class="col-12"><input asp-for="Input.Subject" class="form-control" placeholder="Onderwerp" /></div>
-                <div class="col-12"><textarea asp-for="Input.Message" class="form-control" rows="5" placeholder="Bericht"></textarea></div>
-                <div class="col-12 d-grid"><button class="btn ek-btn-book" type="submit">Verstuur Bericht</button></div>
+                <div class="col-md-6"><label class="form-label">Naam</label><input asp-for="Input.Name" class="form-control ek-field" /></div>
+                <div class="col-md-6"><label class="form-label">E-mail</label><input asp-for="Input.Email" class="form-control ek-field" /></div>
+                <div class="col-12"><label class="form-label">Onderwerp</label><input asp-for="Input.Subject" class="form-control ek-field" /></div>
+                <div class="col-12"><label class="form-label">Bericht</label><textarea asp-for="Input.Message" class="form-control ek-field" rows="5"></textarea></div>
+                <div class="col-12 d-grid"><button class="btn ek-btn-book" type="submit">Verstuur bericht</button></div>
             </form>
-            @if (Model.Sent) { <div class="alert alert-success mt-3 mb-0">Bedankt! We nemen spoedig contact op.</div> }
+            @if (Model.Sent)
+            {
+                <div class="alert alert-success mt-3 mb-0">Dank u! We nemen snel contact met u op.</div>
+            }
         </div>
     </div>
 </div>

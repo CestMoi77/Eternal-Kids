@@ -1,9 +1,6 @@
 @page "/Admin/Orders/{id:guid}"
 @model EternalKids.Web.Pages.Admin.Orders.DetailsModel
-@{
-    Layout = "/Pages/Admin/_AdminLayout.cshtml";
-    ViewData["Title"] = "Order Details";
-}
+@{ Layout = "/Pages/Admin/_AdminLayout.cshtml"; ViewData["Title"] = "Order Details"; }
 
 @if (Model.Order is null)
 {
@@ -11,26 +8,21 @@
 }
 else
 {
-    <div class="card border-0 shadow-sm mb-3">
-        <div class="card-body">
-            <h2 class="h5">@Model.Order.OrderNumber</h2>
-            <p class="mb-1"><strong>Status:</strong> @Model.Order.Status</p>
-            <p class="mb-1"><strong>Event:</strong> @Model.Order.EventType op @Model.Order.EventDate</p>
-            <p class="mb-0"><strong>Totaal:</strong> € @Model.Order.GrandTotal.ToString("N2")</p>
-        </div>
+    <div class="row g-3 mb-3">
+        <div class="col-md-4"><div class="ek-card p-3 h-100"><div class="small text-muted">Ordernummer</div><div class="fw-semibold">@Model.Order.OrderNumber</div></div></div>
+        <div class="col-md-4"><div class="ek-card p-3 h-100"><div class="small text-muted">Status</div><div class="fw-semibold">@Model.Order.Status</div></div></div>
+        <div class="col-md-4"><div class="ek-card p-3 h-100"><div class="small text-muted">Totaal</div><div class="fw-semibold">€ @Model.Order.GrandTotal.ToString("N2")</div></div></div>
     </div>
 
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <h3 class="h6">Order items inclusief OptionsJson</h3>
-            @foreach (var item in Model.Order.Items)
-            {
-                <div class="border rounded p-2 mb-2">
-                    <div><strong>@item.DescriptionSnapshot</strong> • @item.Quantity x € @item.UnitPrice.ToString("N2")</div>
-                    <div class="small text-muted">LineTotal: € @item.LineTotal.ToString("N2")</div>
-                    <pre class="bg-light p-2 small mb-0">@item.OptionsJson</pre>
-                </div>
-            }
-        </div>
+    <div class="ek-card p-3">
+        <h2 class="h5 mb-3">Items & OptionsJson</h2>
+        @foreach (var item in Model.Order.Items)
+        {
+            <div class="border rounded-3 p-3 mb-2">
+                <div class="fw-semibold">@item.DescriptionSnapshot</div>
+                <div class="small text-muted mb-2">@item.Quantity × € @item.UnitPrice.ToString("N2") • Totaal € @item.LineTotal.ToString("N2")</div>
+                <pre class="bg-light p-2 mb-0">@item.OptionsJson</pre>
+            </div>
+        }
     </div>
 }

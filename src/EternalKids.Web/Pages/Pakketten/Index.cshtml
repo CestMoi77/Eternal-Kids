@@ -4,20 +4,21 @@
 
 <div class="text-center mb-4">
     <span class="ek-chip">Pakketten</span>
-    <h1 class="display-5 mt-2">Complete Feestpakketten</h1>
+    <h1 class="display-5 mt-2">Vergelijk onze feestpakketten</h1>
+    <p class="ek-muted">Van instappakket tot all-in premium experience.</p>
 </div>
 
 <div class="row g-4">
     @foreach (var package in Model.Packages)
     {
         <div class="col-md-6 col-xl-3">
-            <article class="ek-card bg-white h-100 p-4">
+            <article class="ek-card ek-card-hover h-100 p-4">
                 <h2 class="h3">@package.Title</h2>
-                <p class="text-secondary">@package.Description</p>
-                <ul class="small text-secondary">
+                <p class="ek-muted">@package.Description</p>
+                <ul class="small ek-muted ps-3 mb-0">
                     @foreach (var feature in package.Features)
                     {
-                        <li>@feature</li>
+                        <li class="mb-1">@feature</li>
                     }
                 </ul>
             </article>
@@ -25,16 +26,16 @@
     }
 </div>
 
-<div class="table-responsive mt-4">
-    <table class="table ek-table">
+<div class="ek-table-wrap mt-4">
+    <table class="table ek-table mb-0 align-middle">
         <thead>
-            <tr><th>Aantal Personen</th><th>Basic</th><th>Elegant</th><th>Prestige</th><th>Deluxe</th></tr>
+            <tr><th>Aantal personen</th><th>Basic</th><th>Elegant</th><th>Prestige</th><th>Deluxe</th></tr>
         </thead>
         <tbody>
             @foreach (var row in Model.ComparisonRows)
             {
                 <tr>
-                    <td>@row.RangeLabel</td>
+                    <td class="fw-semibold">@row.RangeLabel</td>
                     <td>€ @row.Basic.ToString("N0")</td>
                     <td>€ @row.Elegant.ToString("N0")</td>
                     <td>€ @row.Prestige.ToString("N0")</td>
