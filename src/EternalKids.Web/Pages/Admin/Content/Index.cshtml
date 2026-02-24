@@ -1,0 +1,29 @@
+@page "/Admin/Content"
+@model EternalKids.Web.Pages.Admin.Content.IndexModel
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Content Management";
+}
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h2 class="h6">Pagina-content beheren</h2>
+        <form method="post" asp-page-handler="Save" class="row g-2 mb-3">
+            <div class="col-md-2"><input asp-for="Input.PageKey" class="form-control" placeholder="PageKey" /></div>
+            <div class="col-md-2"><input asp-for="Input.SectionKey" class="form-control" placeholder="SectionKey" /></div>
+            <div class="col-md-3"><input asp-for="Input.Title" class="form-control" placeholder="Titel" /></div>
+            <div class="col-md-3"><input asp-for="Input.Body" class="form-control" placeholder="Body" /></div>
+            <div class="col-md-2 d-grid"><button class="btn btn-dark">Opslaan</button></div>
+        </form>
+
+        <table class="table table-sm table-striped">
+            <thead><tr><th>Pagina</th><th>Sectie</th><th>Titel</th><th>Body</th></tr></thead>
+            <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr><td>@item.PageKey</td><td>@item.SectionKey</td><td>@item.Title</td><td>@item.Body</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@page "/Admin/Orders"
+@model EternalKids.Web.Pages.Admin.Orders.IndexModel
+@{
+    Layout = "/Pages/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Order Overzicht";
+}
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <form method="get" class="row g-2 mb-3">
+            <div class="col-md-4">
+                <label class="form-label">Filter op status</label>
+                <select class="form-select" name="status" asp-for="StatusFilter" asp-items="Model.StatusOptions"></select>
+            </div>
+            <div class="col-md-2 align-self-end d-grid">
+                <button class="btn btn-dark" type="submit">Filter</button>
+            </div>
+        </form>
+
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Event</th>
+                    <th>Status</th>
+                    <th>Totaal</th>
+                    <th>Aanbetaling</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td>@order.OrderNumber</td>
+                        <td>@order.EventType (@order.GuestCount)</td>
+                        <td><span class="badge text-bg-secondary">@order.Status</span></td>
+                        <td>€ @order.GrandTotal.ToString("N2")</td>
+                        <td>€ @order.DepositAmount.ToString("N2")</td>
+                        <td><a class="btn btn-sm btn-outline-dark" asp-page="/Admin/Orders/Details" asp-route-id="@order.Id">Details</a></td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
