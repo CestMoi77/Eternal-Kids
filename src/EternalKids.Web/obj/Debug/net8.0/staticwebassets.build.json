@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "ck2ZMSy9xeUKVnenGhp7fotxqh82Kq+nO1dbmqJnU+o=",
+  "Source": "EternalKids.Web",
+  "BasePath": "_content/EternalKids.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EternalKids.Web\\wwwroot",
+      "Source": "EternalKids.Web",
+      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "BasePath": "_content/EternalKids.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "SourceId": "EternalKids.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "BasePath": "_content/EternalKids.Web",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rsftmxgmd7",
+      "Integrity": "xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "SourceId": "EternalKids.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "BasePath": "_content/EternalKids.Web",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0fhmhrv2li",
+      "Integrity": "rG7fRwDoEAdvvLD65q/ABKTSktapNNPWF+fFl0KsNXM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4724"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 02:21:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.rsftmxgmd7.css",
+      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4724"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 02:21:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rsftmxgmd7"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.0fhmhrv2li.js",
+      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rG7fRwDoEAdvvLD65q/ABKTSktapNNPWF+fFl0KsNXM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 13:08:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0fhmhrv2li"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rG7fRwDoEAdvvLD65q/ABKTSktapNNPWF+fFl0KsNXM="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rG7fRwDoEAdvvLD65q/ABKTSktapNNPWF+fFl0KsNXM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Feb 2026 13:08:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rG7fRwDoEAdvvLD65q/ABKTSktapNNPWF+fFl0KsNXM="
+        }
+      ]
+    }
+  ]
+}
