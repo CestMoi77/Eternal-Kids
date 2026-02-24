@@ -1,0 +1,85 @@
+@page "/Checkout"
+@model EternalKids.Web.Pages.Checkout.IndexModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="h4 mb-3">Checkout – Eternal Kids</h1>
+                <p class="text-muted mb-4">Vul je gegevens in en kies je betaalmethode.</p>
+
+                <form method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Input.CustomerName" class="form-label">Naam</label>
+                        <input asp-for="Input.CustomerName" class="form-control" />
+                        <span asp-validation-for="Input.CustomerName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.CustomerEmail" class="form-label">E-mail</label>
+                        <input asp-for="Input.CustomerEmail" class="form-control" />
+                        <span asp-validation-for="Input.CustomerEmail" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.EventDate" class="form-label">Eventdatum</label>
+                        <input asp-for="Input.EventDate" type="date" class="form-control" />
+                        <span asp-validation-for="Input.EventDate" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.EventType" class="form-label">Eventtype</label>
+                        <input asp-for="Input.EventType" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.GuestCount" class="form-label">Aantal gasten</label>
+                        <input asp-for="Input.GuestCount" type="number" min="1" class="form-control" />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label d-block">Betaalkeuze</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="Input.PaymentMode" value="Full" id="payFull" />
+                            <label class="form-check-label" for="payFull">Volledig betalen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="Input.PaymentMode" value="Deposit50" id="payDeposit" />
+                            <label class="form-check-label" for="payDeposit">50% aanbetaling</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-grid">
+                        <button class="btn btn-dark btn-lg" type="submit">Bestellen</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-5">
+        <aside class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h5">Orderoverzicht</h2>
+                <dl class="row mb-0">
+                    <dt class="col-6">Subtotaal</dt>
+                    <dd class="col-6 text-end">€ @Model.Subtotal.ToString("N2")</dd>
+                    <dt class="col-6">Korting</dt>
+                    <dd class="col-6 text-end">€ @Model.DiscountTotal.ToString("N2")</dd>
+                    <dt class="col-6">Totaal</dt>
+                    <dd class="col-6 text-end fw-bold">€ @Model.GrandTotal.ToString("N2")</dd>
+                    <dt class="col-6">50% aanbetaling</dt>
+                    <dd class="col-6 text-end">€ @Model.DepositAmount.ToString("N2")</dd>
+                </dl>
+
+                @if (!string.IsNullOrWhiteSpace(Model.ResultMessage))
+                {
+                    <div class="alert alert-success mt-3 mb-0">@Model.ResultMessage</div>
+                }
+            </div>
+        </aside>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

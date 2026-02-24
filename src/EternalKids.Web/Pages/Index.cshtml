@@ -1,0 +1,54 @@
+@page
+@model EternalKids.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="ek-hero">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+            <span class="ek-chip">Event Planning & Luxury Styling</span>
+            <h1 class="display-4 mt-3">Maak Elk Moment Magisch</h1>
+            <p class="lead text-secondary">Van concept tot uitvoering: Eternal Kids creëert premium events met gepersonaliseerde decoratie, traktaties en drukwerk.</p>
+            <div class="d-flex gap-2">
+                <a asp-page="/Reserveren/Index" class="btn ek-btn-book">Boek Nu</a>
+                <a asp-page="/Pakketten/Index" class="btn btn-outline-dark">Bekijk Pakketten</a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ek-hero-card p-3">
+                <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?q=80&w=1400&auto=format&fit=crop" class="img-fluid rounded" alt="Luxury event styling" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4">
+    <h2 class="mb-4">Onze Diensten</h2>
+    <div class="row g-3">
+        @foreach (var service in Model.Services)
+        {
+            <div class="col-md-4">
+                <div class="ek-card p-4 h-100 bg-white">
+                    <h3 class="h4">@service.Title</h3>
+                    <p class="text-secondary mb-0">@service.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<section class="py-4">
+    <h2 class="mb-4">Reviews</h2>
+    <div class="row g-3">
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="col-md-4">
+                <div class="ek-card p-4 h-100 bg-white">
+                    <p class="mb-2">“@review.Text”</p>
+                    <strong>@review.Author</strong>
+                </div>
+            </div>
+        }
+    </div>
+</section>
