@@ -77,7 +77,7 @@
         "projectName": "EternalKids.Infrastructure",
         "projectPath": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Relha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

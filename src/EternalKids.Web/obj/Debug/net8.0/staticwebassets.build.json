@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aum0Eq8Lf+zN5BnKkgl3GsFlY1/oCB9+74lnLARmsrA=",
+  "Hash": "0AYFZ705KAEMYK6Z/ASgHtznQweLrYIV0AgMXyz+9fY=",
   "Source": "EternalKids.Web",
   "BasePath": "_content/EternalKids.Web",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
       "SourceId": "EternalKids.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
       "BasePath": "_content/EternalKids.Web",
-      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "RelativePath": "css/CSS#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,11 +31,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rsftmxgmd7",
-      "Integrity": "xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=",
+      "Fingerprint": "bvdekvht65",
+      "Integrity": "SQL03Nl4RtqPzkErDdOq7S+5PVJWRE4XTlRq3YpejjM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot\\css\\CSS.css"
     },
     {
       "Identity": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
@@ -61,8 +61,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Route": "css/CSS.bvdekvht65.css",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -71,7 +71,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4724"
+          "Value": "180400"
         },
         {
           "Name": "Content-Type",
@@ -79,48 +79,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=\""
+          "Value": "\"SQL03Nl4RtqPzkErDdOq7S+5PVJWRE4XTlRq3YpejjM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Feb 2026 02:21:53 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.rsftmxgmd7.css",
-      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4724"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 24 Feb 2026 02:21:53 GMT"
+          "Value": "Wed, 25 Feb 2026 15:31:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -130,15 +93,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rsftmxgmd7"
+          "Value": "bvdekvht65"
         },
         {
           "Name": "label",
-          "Value": "css/site.css"
+          "Value": "css/CSS.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-xZAUKWB/iGKHlYAe35L8ZT10nIbipAmSfgWHTZIcReE="
+          "Value": "sha256-SQL03Nl4RtqPzkErDdOq7S+5PVJWRE4XTlRq3YpejjM="
+        }
+      ]
+    },
+    {
+      "Route": "css/CSS.css",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "180400"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SQL03Nl4RtqPzkErDdOq7S+5PVJWRE4XTlRq3YpejjM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Feb 2026 15:31:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SQL03Nl4RtqPzkErDdOq7S+5PVJWRE4XTlRq3YpejjM="
         }
       ]
     },

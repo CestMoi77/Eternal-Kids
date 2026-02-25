@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A6AA44E6-CA1D-4B8A-A2D0-2D4C3FB1AB11}|src\\EternalKids.Web\\EternalKids.Web.csproj|c:\\users\\relha\\source\\repos\\eternal-kids\\src\\eternalkids.web\\wwwroot\\css\\css.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A6AA44E6-CA1D-4B8A-A2D0-2D4C3FB1AB11}|src\\EternalKids.Web\\EternalKids.Web.csproj|solutionrelative:src\\eternalkids.web\\wwwroot\\css\\css.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A6AA44E6-CA1D-4B8A-A2D0-2D4C3FB1AB11}|src\\EternalKids.Web\\EternalKids.Web.csproj|c:\\users\\relha\\source\\repos\\eternal-kids\\src\\eternalkids.web\\pages\\shared\\_blueprintlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A6AA44E6-CA1D-4B8A-A2D0-2D4C3FB1AB11}|src\\EternalKids.Web\\EternalKids.Web.csproj|solutionrelative:src\\eternalkids.web\\pages\\shared\\_blueprintlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CSS.css",
+              "DocumentMoniker": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "RelativeDocumentMoniker": "src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "ToolTip": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "RelativeToolTip": "src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "ViewState": "AgIAADkgAAAAAAAAAAAiwD4gAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-25T15:24:40.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "_BlueprintLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\Pages\\Shared\\_BlueprintLayout.cshtml",
               "RelativeDocumentMoniker": "src\\EternalKids.Web\\Pages\\Shared\\_BlueprintLayout.cshtml",
               "ToolTip": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\Pages\\Shared\\_BlueprintLayout.cshtml",
               "RelativeToolTip": "src\\EternalKids.Web\\Pages\\Shared\\_BlueprintLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-25T02:09:33.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "src\\EternalKids.Web\\Pages\\Shared\\_Layout.cshtml",
