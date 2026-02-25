@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ck2ZMSy9xeUKVnenGhp7fotxqh82Kq+nO1dbmqJnU+o=",
+  "Hash": "aum0Eq8Lf+zN5BnKkgl3GsFlY1/oCB9+74lnLARmsrA=",
   "Source": "EternalKids.Web",
   "BasePath": "_content/EternalKids.Web",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "EternalKids.Web\\wwwroot",
       "Source": "EternalKids.Web",
-      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
       "BasePath": "_content/EternalKids.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
       "SourceId": "EternalKids.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
       "BasePath": "_content/EternalKids.Web",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
       "SourceId": "EternalKids.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\",
       "BasePath": "_content/EternalKids.Web",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -62,7 +62,7 @@
   "Endpoints": [
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -99,7 +99,7 @@
     },
     {
       "Route": "css/site.rsftmxgmd7.css",
-      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -144,7 +144,7 @@
     },
     {
       "Route": "js/site.0fhmhrv2li.js",
-      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -189,7 +189,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {

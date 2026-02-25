@@ -4127,9 +4127,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
       "projectName": "EternalKids.Infrastructure",
-      "projectPath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Relha\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
@@ -4153,8 +4153,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Domain\\EternalKids.Domain.csproj": {
-              "projectPath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Domain\\EternalKids.Domain.csproj"
+            "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Domain\\EternalKids.Domain.csproj": {
+              "projectPath": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Domain\\EternalKids.Domain.csproj"
             }
           }
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EternalKids.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57862ba84076d135589fe1a75c81d4142a93f4bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f7b1d85c1d3334db9e0da223e0ed8aee913c3c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("EternalKids.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EternalKids.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

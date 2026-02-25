@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7rY9X+9MaDI=",
+  "dgSpecHash": "rjanwjyHDZ0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Infrastructure\\EternalKids.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Relha\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Relha\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

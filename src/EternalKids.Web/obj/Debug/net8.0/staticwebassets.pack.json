@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
