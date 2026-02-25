@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CSS.css",
-              "DocumentMoniker": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "DocumentMoniker": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
               "RelativeDocumentMoniker": "src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
-              "ToolTip": "C:\\Users\\Relha\\Source\\Repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
+              "ToolTip": "C:\\Users\\Relha\\source\\repos\\Eternal-Kids\\src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
               "RelativeToolTip": "src\\EternalKids.Web\\wwwroot\\css\\CSS.css",
               "ViewState": "AgIAADkgAAAAAAAAAAAiwD4gAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -59,8 +59,7 @@
               "RelativeToolTip": "src\\EternalKids.Web\\Pages\\Shared\\_BlueprintLayout.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T02:09:33.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T02:09:33.984Z"
             },
             {
               "$type": "Document",
